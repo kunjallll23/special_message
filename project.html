@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message for You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e4d7;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d46a6a;
+        }
+        button {
+            background-color: #d46a6a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #b14d4d;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 30px;
+            color: #333;
+        }
+        img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        #love-response {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="C:\Users\KUNJAL\Downloads\Bear Hug Sticker - Bear Hug - Discover & Share GIFs.gif" alt="Cute Teddy Bear">
+    <h1>NAMASTE SHARMAJI! 💖</h1>
+    <p>Click the button below to receive a special message:</p>
+    <button onclick="showMessage()">Show Message</button>
+    <p id="message"></p>
+    <img id="rose-teddy" src="C:\Users\KUNJAL\Downloads\bear-love.gif" alt="Teddy with Rose" style="display: none;">
+    
+    <p id="love-question" style="display: none;">Do you love me?</p>
+    <button id="yes-btn" style="display: none;" onclick="loveResponse('yes')">Yes</button>
+    <button id="no-btn" style="display: none;" onclick="loveResponse('no')">No</button>
+    <p id="love-response"></p>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "Tujhse wo aakhri ishq hai , jo pheli baar hua hai mujhe 🥺🫶🏻",
+                "Im falling for u more n more everyday sharmajiii🤭♥♥",
+                "You are my jigar ka tukda.🙈🙈",
+                "babe you are the cutest cutie of all cute cuties 😘😘 ",
+                "baat simple hai mohhabat hai tumse 💘💘"
+            ];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById('message').textContent = messages[randomIndex];
+            document.getElementById('rose-teddy').style.display = 'block';
+            document.getElementById('love-question').style.display = 'block';
+            document.getElementById('yes-btn').style.display = 'inline-block';
+            document.getElementById('no-btn').style.display = 'inline-block';
+        }
+
+        function loveResponse(answer) {
+            const responseElement = document.getElementById('love-response');
+            if (answer === 'yes') {
+                responseElement.textContent = "I love you more chariyaaaa! 💖";
+            } else {
+                responseElement.textContent = "NO! SHUT UP. YOU LOVE ME! 😆";
+            }
+        }
+    </script>
+</body>
+</html>
